@@ -1,0 +1,10 @@
+.env
+.secret_key
+db.sqlite3
+venv
+.venv
+var
+staticfiles
+data
+**/__pycache__
+*.bat

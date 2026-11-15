@@ -1,0 +1,8 @@
+.env
+db.sqlite3
+venv
+.venv
+wheels
+staticfiles
+data
+**/__pycache__
