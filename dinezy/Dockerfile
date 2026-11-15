@@ -14,6 +14,14 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
+
+# tampilan (templates & static) disimpan di repo frontend
+ARG FRONTEND_REPO
+ARG FRONTEND_BRANCH=main
+ARG GITHUB_TOKEN
+RUN FRONTEND_REPO="$FRONTEND_REPO" FRONTEND_BRANCH="$FRONTEND_BRANCH" GITHUB_TOKEN="$GITHUB_TOKEN" \
+    python docker/ambil_tampilan.py /app/frontend
+
 RUN mkdir -p data media var/cache && chmod +x start.sh
 
 EXPOSE 8000
